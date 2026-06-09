@@ -84,7 +84,6 @@ public class PVGTCore {
     }
 
     private void modifyMaterials(PostMaterialEvent event) {
-        // CustomMaterials.modify();
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {

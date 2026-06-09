@@ -1,6 +1,16 @@
 package xyz.jambon.pvgtcore.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import net.minecraft.sounds.SoundEvent;
+import vazkii.botania.common.block.BotaniaBlock;
+import vazkii.botania.common.block.BotaniaBlocks;
+import vazkii.botania.common.handler.BotaniaSounds;
+import vazkii.botania.common.item.BotaniaItems;
+import xyz.jambon.pvgtcore.PVGTCore;
+import xyz.jambon.pvgtcore.helpers.PVIgnore;
+
+import java.util.Map;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
@@ -26,10 +36,12 @@ public class PVBotaniaMaterials {
     public static Material ORICHALCOS;
 
     public static void register() {
-        //Material MANASTEEL = regmat("manasteel", "ingot", "SHINY", 0x4c82a9, 0x171781)
-                // .components(Iron, 1, MANA, 1)
-                //.buildAndRegister();
+        Material MANASTEEL = regmat("manasteel", "shiny", 0x4c82a9, 0x171781).ingot()
+                .components(Iron, 1, MANA, 1)
+                .buildAndRegister();
 
-        // PVIgnore.ignore("ingot", MANASTEEL, "botania:manasteel_ingot");
+        /*PVIgnore.ignoreForms(MANASTEEL, Map.of(
+               "ingot", BotaniaItems.manaSteel
+        ));*/
     }
 }
