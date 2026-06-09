@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package xyz.jambon.pvgtcore;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -6,15 +6,17 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
+import xyz.jambon.pvgtcore.main.GT.matelem.PVElements;
+
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
 @GTAddon
-public class ExampleGTAddon implements IGTAddon {
+public class PVGTCoreAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return ExampleMod.EXAMPLE_REGISTRATE;
+        return PVGTCore.PVGTCORE_REGISTRATE;
     }
 
     @Override
@@ -22,7 +24,7 @@ public class ExampleGTAddon implements IGTAddon {
 
     @Override
     public String addonModId() {
-        return ExampleMod.MOD_ID;
+        return PVGTCore.MOD_ID;
     }
 
     @Override
@@ -37,7 +39,8 @@ public class ExampleGTAddon implements IGTAddon {
 
     @Override
     public void registerElements() {
-        // CustomElements.init();
+        IGTAddon.super.registerElements();
+        PVElements.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

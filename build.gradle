@@ -26,46 +26,21 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven {
-        name = 'GTCEu Maven'
-        url = 'https://maven.gtceu.com'
+        name = 'GTCEu Maven'; url = 'https://maven.gtceu.com'
         content {
-            includeGroup 'com.gregtechceu.gtceu'
-        }
-    }
-    maven {
-        name 'FirstDarkDev'
-        url "https://maven.firstdark.dev/snapshots/"
-    }
-    maven { // Registrate
-        url = "https://maven.tterrag.com/"
-        content {
-            // need to be specific here due to version overlaps
-            includeGroup("com.tterrag.registrate")
-        }
-    }
-    maven {
-        // Patchouli, JEI
-        name = "BlameJared"
-        url = "https://maven.blamejared.com/"
-    }
-    maven {
-        url = "https://maven.theillusivec4.top/"
-    }
-    maven {
-        // Curse Forge File
-        url "https://cursemaven.com/"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
-    maven {
-        // EMI
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
-	}
-    maven {
-        url = "https://thedarkcolour.github.io/KotlinForForge/"
-    }
+            includeGroup 'com.gregtechceu.gtceu'}}
+    maven {name 'FirstDarkDev'; url "https://maven.firstdark.dev/snapshots/"}
+    maven { /* Registrate */ url = "https://maven.tterrag.com/"
+        content {includeGroup("com.tterrag.registrate")}}
+    maven {/* Patchouli, JEI */ name = "BlameJared"; url = "https://maven.blamejared.com/"}
+    maven {url = "https://maven.theillusivec4.top/"}
+    maven {/* Curse Forge File */ url "https://cursemaven.com/"
+        content {includeGroup "curse.maven"}}
+    maven {/* EMI */ name = "TerraformersMC"; url = "https://maven.terraformersmc.com/"}
+    maven {/* Kotlin */ url = "https://thedarkcolour.github.io/KotlinForForge/"}
+    maven {/* Modmaven */ url = "https://modmaven.dev/"}
+    maven {url = "https://jitpack.io" }
+
 
 }
 
@@ -129,7 +104,7 @@ legacyForge {
 }
 jar {
     manifest.attributes([
-            "MixinConfigs": "examplemod.mixins.json"
+            "MixinConfigs": "pvgtcore.mixins.json"
     ])
 }
 
@@ -157,9 +132,19 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // AE2
+    modImplementation("appeng:appliedenergistics2-forge:${ae2_version}")
+    modImplementation("org.appliedenergistics:guideme:${guide_me_version}")
+
+    // Botania
+    modImplementation("vazkii.botania:Botania:${botania_version}")
+    modImplementation("top.theillusivec4.curios:curios-forge:${curios_version}")
+    modImplementation("vazkii.patchouli:Patchouli:${patchouli_version}")
+    modImplementation("curse.maven:extrabotany-reburn-1271869:7182385")
+    modImplementation "curse.maven:event-wrapper-1256971:7182179"
 }
 
-// See com.example.examplemod.mixin.DummyMixin for information about mixins
 mixin {
     add sourceSets.main, "mixins.${mod_id}.refmap.json"
     config "${mod_id}.mixins.json"

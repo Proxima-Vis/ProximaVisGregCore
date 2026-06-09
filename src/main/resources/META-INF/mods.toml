@@ -10,6 +10,7 @@ license = "${mod_license}"
 [[mods]]
     modId = "${mod_id}"
     version = "${version}"
+    mixinConfigs = ["pvgtcore.mixins.json"]
     displayName = "${mod_name}"
     displayURL = "${mod_url}"
     # This will be displayed as your mod's logo in the Mods panel.

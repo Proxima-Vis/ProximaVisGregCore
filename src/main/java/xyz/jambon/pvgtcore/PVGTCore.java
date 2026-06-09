@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package xyz.jambon.pvgtcore;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -21,16 +21,19 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xyz.jambon.pvgtcore.main.GT.matelem.PVBotaniaMaterials;
+import xyz.jambon.pvgtcore.main.GT.matelem.PVElementalMaterials;
+import xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials;
 
-@Mod(ExampleMod.MOD_ID)
+@Mod(PVGTCore.MOD_ID)
 @SuppressWarnings("removal")
-public class ExampleMod {
+public class PVGTCore {
 
-    public static final String MOD_ID = "examplemod";
+    public static final String MOD_ID = "pvgtcore";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate EXAMPLE_REGISTRATE = GTRegistrate.create(ExampleMod.MOD_ID);
+    public static GTRegistrate PVGTCORE_REGISTRATE = GTRegistrate.create(PVGTCore.MOD_ID);
 
-    public ExampleMod() {
+    public PVGTCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -48,8 +51,7 @@ public class ExampleMod {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
-
-        EXAMPLE_REGISTRATE.registerRegistrate();
+        PVGTCORE_REGISTRATE.registerRegistrate();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -63,72 +65,36 @@ public class ExampleMod {
         LOGGER.info("Hey, we're on Minecraft version {}!", Minecraft.getInstance().getLaunchedVersion());
     }
 
-    /**
-     * Create a ResourceLocation in the format "modid:path"
-     *
-     * @param path
-     * @return ResourceLocation with the namespace of your mod
-     */
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID, path);
     }
 
-    /**
-     * Create a material manager for your mod using GT's API.
-     * You MUST have this if you have custom materials.
-     * Remember to register them not to GT's namespace, but your own.
-     * 
-     * @param event
-     */
+    public static void init() {
+        PVGTCORE_REGISTRATE.registerRegistrate();
+    }
+
     private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(ExampleMod.MOD_ID);
+        GTCEuAPI.materialManager.createRegistry(PVGTCore.MOD_ID);
     }
 
-    /**
-     * You will also need this for registering custom materials
-     * Call init() from your Material class(es) here
-     * 
-     * @param event
-     */
     private void addMaterials(MaterialEvent event) {
-        // CustomMaterials.init();
+        PVElementalMaterials.register();
+        PVMaterials.register();
+        PVBotaniaMaterials.register();
     }
 
-    /**
-     * (Optional) Used to modify pre-existing materials from GregTech
-     * 
-     * @param event
-     */
     private void modifyMaterials(PostMaterialEvent event) {
         // CustomMaterials.modify();
     }
 
-    /**
-     * Used to register your own new RecipeTypes.
-     * Call init() from your RecipeType class(es) here
-     * 
-     * @param event
-     */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         // CustomRecipeTypes.init();
     }
 
-    /**
-     * Used to register your own new machines.
-     * Call init() from your Machine class(es) here
-     * 
-     * @param event
-     */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         // CustomMachines.init();
     }
 
-    /**
-     * Used to register your own new sounds
-     * Call init from your Sound class(es) here
-     * 
-     * @param event
-     */
     public void registerSounds(GTCEuAPI.RegisterEvent<ResourceLocation, SoundEntry> event) {
         // CustomSounds.init();
     }
