@@ -30,6 +30,6 @@ public class PVElementalMaterials {
 
     public static Material elemmat(String element, int color) {
         return new Material.Builder(PVGTCore.id(element))
-                .color(color).element(PVElements.get(element)).ingot().buildAndRegister();
+                .color(color).element(PVElements.get(element)).dust().buildAndRegister();
     }
 }

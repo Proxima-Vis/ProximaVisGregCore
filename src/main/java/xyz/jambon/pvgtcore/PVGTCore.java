@@ -83,8 +83,7 @@ public class PVGTCore {
         PVBotaniaMaterials.register();
     }
 
-    private void modifyMaterials(PostMaterialEvent event) {
-    }
+    private void modifyMaterials(PostMaterialEvent event) {}
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         // CustomRecipeTypes.init();
