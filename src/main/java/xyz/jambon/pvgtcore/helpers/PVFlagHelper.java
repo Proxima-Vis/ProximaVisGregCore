@@ -1,24 +1,30 @@
 package xyz.jambon.pvgtcore.helpers;
 
-import xyz.jambon.pvgtcore.main.GT.matelem.PVMaterialFlags;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlag;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
+
+import xyz.jambon.pvgtcore.main.GT.matelem.PVMaterialFlags;
 
 import java.lang.reflect.Field;
 import java.util.*;
 
 public final class PVFlagHelper {
+
     private static final Map<String, MaterialFlag> MAP = new HashMap<>();
 
     static {
         for (Field f : PVMaterialFlags.class.getFields()) {
             if (f.getType() == MaterialFlag.class) {
-                try { MAP.put(norm(f.getName()), (MaterialFlag) f.get(null)); } catch (Exception ignored) {}
+                try {
+                    MAP.put(norm(f.getName()), (MaterialFlag) f.get(null));
+                } catch (Exception ignored) {}
             }
         }
         for (Field f : MaterialFlags.class.getFields()) {
             if (f.getType() == MaterialFlag.class) {
-                try { MAP.put(norm(f.getName()), (MaterialFlag) f.get(null)); } catch (Exception ignored) {}
+                try {
+                    MAP.put(norm(f.getName()), (MaterialFlag) f.get(null));
+                } catch (Exception ignored) {}
             }
         }
     }
