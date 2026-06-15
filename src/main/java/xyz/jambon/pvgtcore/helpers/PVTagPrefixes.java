@@ -5,6 +5,7 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public final class PVTagPrefixes {
 
@@ -21,9 +22,19 @@ public final class PVTagPrefixes {
     }
 
     public static TagPrefix get(String name) {
-        TagPrefix p = PREFIXES.get(name.toLowerCase());
-        if (p == null)
-            throw new IllegalArgumentException("Unknown TagPrefix: " + name);
+        TagPrefix p = PREFIXES.get(Objects.requireNonNull(name).toLowerCase());
+        if (p == null) throw new IllegalArgumentException("Unknown TagPrefix: " + name);
         return p;
+    }
+
+    public static TagPrefix[] get(String[] names) {
+        Objects.requireNonNull(names);
+        TagPrefix[] result = new TagPrefix[names.length];
+        for (int i = 0; i < names.length; i++) result[i] = get(names[i]);
+        return result;
+    }
+
+    public static TagPrefix[] getAll(String... names) {
+        return get(names);
     }
 }
