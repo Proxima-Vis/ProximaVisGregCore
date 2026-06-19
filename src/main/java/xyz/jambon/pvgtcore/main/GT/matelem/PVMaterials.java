@@ -3,15 +3,8 @@ package xyz.jambon.pvgtcore.main.GT.matelem;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
-
-import com.gregtechceu.gtceu.api.fluids.FluidConstants;
 import com.gregtechceu.gtceu.api.fluids.FluidState;
-import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKey;
-import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.WaterFluid;
+
 import xyz.jambon.pvgtcore.helpers.PVFlagHelper;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
@@ -41,7 +34,7 @@ public class PVMaterials {
     public static Material DEPLETED_ENERGIUM;
 
     public static void register() {
-        //NOOM
+        // NOOM
         Material NOOM_GOO = regmat("noom_goo", "lignite", 0xdcdcdf, 0xceced2).gem()
                 .components(ANULIUM, 1)
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
@@ -61,7 +54,7 @@ public class PVMaterials {
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
                 .buildAndRegister();
 
-        //GLUGG
+        // GLUGG
         Material GLUGG_GOO = regmat("glugg_goo", "lignite", 0x5cff7d, 0x5cffff).gem()
                 .components(GURGLIUM, 1)
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
@@ -83,7 +76,7 @@ public class PVMaterials {
                 .components(GURGLIUM, 2, Water, 1)
                 .buildAndRegister();
 
-        //CINDEL
+        // CINDEL
         Material CINDEL_GOO = regmat("cindel_goo", "lignite", 0x943b00, 0x000000).gem()
                 .components(GURGLIUM, 1)
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
@@ -99,7 +92,7 @@ public class PVMaterials {
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
                 .buildAndRegister();
 
-        //ENGER
+        // ENGER
         Material ENERGIUM_MAT = regmat("energium_mat", "certus", 0xb24cd8, 0x7f3fb2).gem()
                 .components(ENERGIUM, 6)
                 .liquid(new FluidBuilder().temperature(300).state(FluidState.LIQUID))
