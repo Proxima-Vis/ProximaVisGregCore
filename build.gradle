@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url "https://jitpack.io"}
         mavenCentral()
     }
     dependencies {
@@ -39,9 +40,9 @@ repositories {
     maven {/* EMI */ name = "TerraformersMC"; url = "https://maven.terraformersmc.com/"}
     maven {/* Kotlin */ url = "https://thedarkcolour.github.io/KotlinForForge/"}
     maven {/* Modmaven */ url = "https://modmaven.dev/"}
-    maven {url = "https://jitpack.io" }
-
-
+    maven {url = "https://jitpack.io"}
+    maven {url = "https://api.modrinth.com/maven"}
+    maven {url = 'https://thedarkcolour.github.io/KotlinForForge/'}
 }
 
 version = mod_version
@@ -112,7 +113,6 @@ apply from: "$rootDir/gradle/scripts/spotless.gradle"
 
 dependencies {
     compileOnly("org.jetbrains:annotations:26.0.1")
-
     // Mixin
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
 
@@ -143,6 +143,32 @@ dependencies {
     modImplementation("vazkii.patchouli:Patchouli:${patchouli_version}")
     modImplementation("curse.maven:extrabotany-reburn-1271869:7182385")
     modImplementation "curse.maven:event-wrapper-1256971:7182179"
+
+    //PV Core
+    /*modImplementation('com.github.Proxima-Vis:ProximaVisCore:main-SNAPSHOT')
+    modImplementation("curse.maven:alexs-caves-924854:5848216")
+    modImplementation("curse.maven:alexs-mobs-426558:5698791")
+    modImplementation("curse.maven:unusual-fish-mod-568300:8084434")
+    modImplementation("curse.maven:unusual-prehistory-2-1355824:7865890")
+    modImplementation("curse.maven:citadel-331936:5633260")
+    modImplementation("curse.maven:genesis-1367303:7923147")
+    modImplementation("curse.maven:zps-1283072:7944271")
+    modImplementation("maven.modrinth:vlib:1.20.1-0.1.0+forge")
+    modImplementation("curse.maven:fusion-854949:8276945")
+    modImplementation("curse.maven:lodestone-616457:6213794")
+    implementation("org.valkyrienskies.core:api:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:internal:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:util:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:impl:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    modApi("org.valkyrienskies:valkyrienskies-120-forge:${vs2_version}") { transitive = false
+        exclude group: 'org.valkyrienskies.core', module: ''}
+    modApi("thedarkcolour:kotlinforforge:4.11.0")
+    modImplementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0")*/
+
 }
 
 mixin {
