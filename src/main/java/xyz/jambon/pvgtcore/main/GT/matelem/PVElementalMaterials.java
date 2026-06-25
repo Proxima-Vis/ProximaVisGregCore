@@ -4,17 +4,9 @@ import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 
 import xyz.jambon.pvgtcore.PVGTCore;
 
+import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
+
 public class PVElementalMaterials {
-
-    public static Material ANULIUM;
-    public static Material GURGLIUM;
-    public static Material PRIMORDIUM;
-    public static Material ENERGIUM;
-    public static Material ENGERIOPHAGE;
-
-    public static Material MANA;
-    public static Material ALFMANA;
-    public static Material SPIRIT;
 
     public static void register() {
         ANULIUM = elemmat("anulium", 0xc4c5cb);

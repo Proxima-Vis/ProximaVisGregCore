@@ -2,7 +2,10 @@ package xyz.jambon.pvgtcore.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlag;
 
+import java.util.List;
+
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class PVMaterialFlags {
 
@@ -14,6 +17,7 @@ public class PVMaterialFlags {
     public static final MaterialFlag flammable = FLAMMABLE;
     public static final MaterialFlag sticky = STICKY;
     public static final MaterialFlag phosphorescent = PHOSPHORESCENT;
+    public static final MaterialFlag fireproof = FIRE_RESISTANT;
 
     public static final MaterialFlag plates = GENERATE_PLATE;
     public static final MaterialFlag densePlate = GENERATE_DENSE;
@@ -30,6 +34,7 @@ public class PVMaterialFlags {
     public static final MaterialFlag noWorking = NO_WORKING;
     public static final MaterialFlag noSmashing = NO_SMASHING;
     public static final MaterialFlag noSmelt = NO_SMELTING;
+    public static final MaterialFlag noOreSmelt = NO_ORE_SMELTING;
     public static final MaterialFlag blastDouble = BLAST_FURNACE_CALCITE_DOUBLE;
     public static final MaterialFlag blastTriple = BLAST_FURNACE_CALCITE_TRIPLE;
     public static final MaterialFlag noAbsRecipe = DISABLE_ALLOY_BLAST;
@@ -54,4 +59,8 @@ public class PVMaterialFlags {
     public static final MaterialFlag solderMatGood = SOLDER_MATERIAL_GOOD;
 
     public static final MaterialFlag highSifter = HIGH_SIFTER_OUTPUT;
+
+    public static final List<MaterialFlag> stdMetal = STD_METAL;
+    public static final List<MaterialFlag> extMetal = EXT_METAL;
+    public static final List<MaterialFlag> ext2Metal = EXT2_METAL;
 }

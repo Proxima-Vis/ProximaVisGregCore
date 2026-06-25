@@ -10,39 +10,53 @@ import java.util.*;
 
 public final class PVFlagHelper {
 
-    private static final Map<String, MaterialFlag> MAP = new HashMap<>();
+    private static final Map<String, Object> MAP = new HashMap<>();
 
     static {
-        for (Field f : PVMaterialFlags.class.getFields()) {
-            if (f.getType() == MaterialFlag.class) {
-                try {
-                    MAP.put(norm(f.getName()), (MaterialFlag) f.get(null));
-                } catch (Exception ignored) {}
-            }
-        }
-        for (Field f : MaterialFlags.class.getFields()) {
-            if (f.getType() == MaterialFlag.class) {
-                try {
-                    MAP.put(norm(f.getName()), (MaterialFlag) f.get(null));
-                } catch (Exception ignored) {}
-            }
+        load(PVMaterialFlags.class);
+        load(MaterialFlags.class);
+    }
+
+    private static void load(Class<?> cls) {
+        for (Field f : cls.getFields()) {
+            try {
+                Object value = f.get(null);
+                String key = norm(f.getName());
+
+                if (value instanceof MaterialFlag) {
+                    MAP.put(key, value);
+                }
+                if (value instanceof List<?> list && !list.isEmpty() && list.get(0) instanceof MaterialFlag) {
+                    MAP.put(key, list);
+                }
+            } catch (Exception ignored) {}
         }
     }
 
     private PVFlagHelper() {}
 
     public static MaterialFlag get(String name) {
-        Objects.requireNonNull(name);
-        MaterialFlag f = MAP.get(norm(name));
-        if (f == null) throw new IllegalArgumentException("Unknown MaterialFlag: " + name);
-        return f;
+        Object v = MAP.get(norm(name));
+        if (v instanceof MaterialFlag f) return f;
+        throw new IllegalArgumentException("Unknown MaterialFlag: " + name);
     }
 
     public static MaterialFlag[] getAll(String... names) {
-        Objects.requireNonNull(names);
-        MaterialFlag[] out = new MaterialFlag[names.length];
-        for (int i = 0; i < names.length; i++) out[i] = get(names[i]);
-        return out;
+        List<MaterialFlag> out = new ArrayList<>();
+
+        for (String n : names) {
+            Object v = MAP.get(norm(n));
+            if (v == null) {
+                throw new IllegalArgumentException("Unknown flag or flag group: " + n);
+            }
+            if (v instanceof MaterialFlag f) {
+                out.add(f);
+            } else if (v instanceof List<?> list) {
+                for (Object o : list) out.add((MaterialFlag) o);
+            }
+        }
+
+        return out.toArray(new MaterialFlag[0]);
     }
 
     private static String norm(String s) {

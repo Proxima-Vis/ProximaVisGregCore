@@ -21,9 +21,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xyz.jambon.pvgtcore.main.GT.matelem.PVBotaniaMaterials;
-import xyz.jambon.pvgtcore.main.GT.matelem.PVElementalMaterials;
-import xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials;
+import xyz.jambon.pvgtcore.main.GT.matelem.*;
 
 @Mod(PVGTCore.MOD_ID)
 @SuppressWarnings("removal")
@@ -78,9 +76,7 @@ public class PVGTCore {
     }
 
     private void addMaterials(MaterialEvent event) {
-        PVElementalMaterials.register();
-        PVMaterials.register();
-        PVBotaniaMaterials.register();
+        PVMaterials.init();
     }
 
     private void modifyMaterials(PostMaterialEvent event) {}
