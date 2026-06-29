@@ -91,5 +91,6 @@ public class PVMainMaterials {
                 .components(ENERGIUM, 5)
                 .flags(PVFlagHelper.getAll("ext2Metal", "frame", "long_rod", "crystallizable", "lens"))
                 .buildAndRegister();
+
     }
 }

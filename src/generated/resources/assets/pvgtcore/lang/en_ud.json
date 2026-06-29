@@ -1,5 +1,6 @@
 {
   "material.pvgtcore.aerialite": "ǝʇıןɐıɹǝⱯ",
+  "material.pvgtcore.aerialite_tungstensteel": "ǝʇıןɐıɹǝⱯ pǝʇɐoƆ ןǝǝʇsuǝʇsbun⟘",
   "material.pvgtcore.alfmana": "ɐuɐɯɟןⱯ",
   "material.pvgtcore.anulium": "ɯnıןnuⱯ",
   "material.pvgtcore.cindel_goo": "oo⅁ ןǝpuıƆ",
@@ -9,10 +10,12 @@
   "material.pvgtcore.dragonstone": "ǝuoʇsuobɐɹᗡ",
   "material.pvgtcore.elementium": "ɯnıʇuǝɯǝןƎ",
   "material.pvgtcore.elementium_quartz": "zʇɹɐnὉ ɯnıʇuǝɯǝןƎ",
+  "material.pvgtcore.elementium_stainless_steel": "ןǝǝʇS pǝdoᗡ-ɟןⱯ ssǝןuıɐʇS",
   "material.pvgtcore.energium": "ɯnıbɹǝuƎ",
   "material.pvgtcore.energium_mat": "ʇɐW ɯnıbɹǝuƎ",
   "material.pvgtcore.engeriophage": "ǝbɐɥdoıɹǝbuƎ",
   "material.pvgtcore.gaiasteel": "ןǝǝʇsɐıɐ⅁",
+  "material.pvgtcore.gaiasteel_titanium": "ɯnıuɐʇı⟘ pǝsnɟuı-ɐıɐ⅁",
   "material.pvgtcore.glugg_brine": "ǝuıɹᗺ bbnן⅁",
   "material.pvgtcore.glugg_goo": "oo⅁ bbnן⅁",
   "material.pvgtcore.gurglium": "ɯnıןbɹn⅁",
@@ -26,7 +29,7 @@
   "material.pvgtcore.mana_pearl": "ןɹɐǝԀ ɐuɐW",
   "material.pvgtcore.mana_quartz": "zʇɹɐnὉ ɐuɐW",
   "material.pvgtcore.manasteel": "ןǝǝʇsɐuɐW",
-  "material.pvgtcore.manasteel_steel": "ןǝǝʇS ןǝǝʇsɐuɐW",
+  "material.pvgtcore.manasteel_steel": "ןǝǝʇS pǝdoᗡ-ɐuɐW",
   "material.pvgtcore.noom": "ɯooN",
   "material.pvgtcore.noom_goo": "oo⅁ ɯooN",
   "material.pvgtcore.orichalcos": "soɔןɐɥɔıɹO",
@@ -36,6 +39,8 @@
   "material.pvgtcore.primordial_ashes": "sǝɥsⱯ ןɐıpɹoɯıɹԀ",
   "material.pvgtcore.primordium": "ɯnıpɹoɯıɹԀ",
   "material.pvgtcore.shadowium": "ɯnıʍopɐɥS",
+  "material.pvgtcore.shadowium_photonium_rhodium_palladium": "ɯnıpɐןןɐԀ pǝʇɐןԀ ɯnıpoɥᴚ pǝʇɐuıɯnןןI",
   "material.pvgtcore.spirit": "ʇıɹıdS",
-  "material.pvgtcore.terrasteel": "ןǝǝʇsɐɹɹǝ⟘"
+  "material.pvgtcore.terrasteel": "ןǝǝʇsɐɹɹǝ⟘",
+  "material.pvgtcore.terrasteel_aluminium": "ןǝǝʇsɐɹɹǝ⟘ pǝzıuıɯnןⱯ"
 }
