@@ -29,20 +29,25 @@ repositories {
     maven {
         name = 'GTCEu Maven'; url = 'https://maven.gtceu.com'
         content {
-            includeGroup 'com.gregtechceu.gtceu'}}
-    maven {name 'FirstDarkDev'; url "https://maven.firstdark.dev/snapshots/"}
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+    maven { name 'FirstDarkDev'; url "https://maven.firstdark.dev/snapshots/" }
     maven { /* Registrate */ url = "https://maven.tterrag.com/"
-        content {includeGroup("com.tterrag.registrate")}}
-    maven {/* Patchouli, JEI */ name = "BlameJared"; url = "https://maven.blamejared.com/"}
-    maven {url = "https://maven.theillusivec4.top/"}
+        content { includeGroup("com.tterrag.registrate") }
+    }
+    maven {/* Patchouli, JEI */ name = "BlameJared"; url = "https://maven.blamejared.com/" }
+    maven { url = "https://maven.theillusivec4.top/" }
     maven {/* Curse Forge File */ url "https://cursemaven.com/"
-        content {includeGroup "curse.maven"}}
-    maven {/* EMI */ name = "TerraformersMC"; url = "https://maven.terraformersmc.com/"}
-    maven {/* Kotlin */ url = "https://thedarkcolour.github.io/KotlinForForge/"}
-    maven {/* Modmaven */ url = "https://modmaven.dev/"}
-    maven {url = "https://jitpack.io"}
-    maven {url = "https://api.modrinth.com/maven"}
-    maven {url = 'https://thedarkcolour.github.io/KotlinForForge/'}
+        content { includeGroup "curse.maven" }
+    }
+    maven {/* EMI */ name = "TerraformersMC"; url = "https://maven.terraformersmc.com/" }
+    maven {/* Kotlin */ url = "https://thedarkcolour.github.io/KotlinForForge/" }
+    maven {/* Modmaven */ url = "https://modmaven.dev/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://api.modrinth.com/maven" }
+    maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+    maven {/* VS */ url = "https://maven.valkyrienskies.org"}
 }
 
 version = mod_version
@@ -145,20 +150,39 @@ dependencies {
     modImplementation "curse.maven:event-wrapper-1256971:7182179"
 
     //PV Core
+    /*
     modImplementation('com.github.Proxima-Vis:ProximaVisCore:main-SNAPSHOT') {transitive = false}
     modImplementation("curse.maven:alexs-caves-924854:5848216")
     modImplementation("curse.maven:alexs-mobs-426558:5698791")
     modImplementation("curse.maven:unusual-fish-mod-568300:8084434")
     modImplementation("curse.maven:unusual-prehistory-2-1355824:7865890")
     modImplementation("curse.maven:citadel-331936:5633260")
-    modImplementation("curse.maven:genesis-1367303:7923147")
+    modImplementation("curse.maven:genesis-1367303:7923147") {transitive = false}
     modImplementation("curse.maven:zps-1283072:7918772")
     modImplementation("maven.modrinth:vlib:1.20.1-0.1.0+forge")
     modImplementation("curse.maven:fusion-854949:8276945")
     modImplementation("curse.maven:lodestone-616457:6213794")
-    modImplementation("curse.maven:valkyrien-skies-258371:7906689")
+    //modImplementation("curse.maven:valkyrien-skies-258371:7906689")
+    implementation("org.valkyrienskies.core:api:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:internal:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:util:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    implementation("org.valkyrienskies.core:impl:${vs_core_version}") { transitive = false
+        exclude group: 'org.joml', module: ''}
+    modApi("org.valkyrienskies:valkyrienskies-120-forge:${vs2_version}") { transitive = false
+        exclude group: 'org.valkyrienskies.core', module: ''}
+    modImplementation("curse.maven:fossils-223908:8217427")
     modApi("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0")
+    modImplementation("curse.maven:geckolib-388172:8285794")
+    modImplementation("curse.maven:morehitboxes-1115989:6942239")
+    modImplementation("curse.maven:terrablender-563928:6290448")
+    modImplementation("curse.maven:pekhui-319596:5393101")
+    */
+
+
 
 }
 
