@@ -47,7 +47,8 @@ public class PVSupercons {
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
                 .ignoredTagPrefixes()
                 .buildAndRegister();
-        Material SHADOWIUM_PHOTONIUM_RHODIUM_PALLADIUM = regmat("shadowium_photonium_rhodium_palladium", "shiny", 0x943b00, 0x000000).ingot()
+        Material SHADOWIUM_PHOTONIUM_RHODIUM_PALLADIUM = regmat("shadowium_photonium_rhodium_palladium", "shiny",
+                0x943b00, 0x000000).ingot()
                 .components(RhodiumPlatedPalladium, 2, SHADOWIUM, 1, PHOTONIUM, 1)
                 .langValue("Illuminated Rhodium Plated Palladium")
                 .cableProperties(GTValues.V[GTValues.LuV], 1, 0, true)
@@ -68,6 +69,5 @@ public class PVSupercons {
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
                 .ignoredTagPrefixes()
                 .buildAndRegister();
-
     }
 }
