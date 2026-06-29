@@ -1,5 +1,6 @@
 {
   "material.pvgtcore.aerialite": "Aerialite",
+  "material.pvgtcore.aerialite_tungstensteel": "Tungstensteel Coated Aerialite",
   "material.pvgtcore.alfmana": "Alfmana",
   "material.pvgtcore.anulium": "Anulium",
   "material.pvgtcore.cindel_goo": "Cindel Goo",
@@ -9,10 +10,12 @@
   "material.pvgtcore.dragonstone": "Dragonstone",
   "material.pvgtcore.elementium": "Elementium",
   "material.pvgtcore.elementium_quartz": "Elementium Quartz",
+  "material.pvgtcore.elementium_stainless_steel": "Stainless Alf-Doped Steel",
   "material.pvgtcore.energium": "Energium",
   "material.pvgtcore.energium_mat": "Energium Mat",
   "material.pvgtcore.engeriophage": "Engeriophage",
   "material.pvgtcore.gaiasteel": "Gaiasteel",
+  "material.pvgtcore.gaiasteel_titanium": "Gaia-infused Titanium",
   "material.pvgtcore.glugg_brine": "Glugg Brine",
   "material.pvgtcore.glugg_goo": "Glugg Goo",
   "material.pvgtcore.gurglium": "Gurglium",
@@ -26,7 +29,7 @@
   "material.pvgtcore.mana_pearl": "Mana Pearl",
   "material.pvgtcore.mana_quartz": "Mana Quartz",
   "material.pvgtcore.manasteel": "Manasteel",
-  "material.pvgtcore.manasteel_steel": "Manasteel Steel",
+  "material.pvgtcore.manasteel_steel": "Mana-Doped Steel",
   "material.pvgtcore.noom": "Noom",
   "material.pvgtcore.noom_goo": "Noom Goo",
   "material.pvgtcore.orichalcos": "Orichalcos",
@@ -36,6 +39,8 @@
   "material.pvgtcore.primordial_ashes": "Primordial Ashes",
   "material.pvgtcore.primordium": "Primordium",
   "material.pvgtcore.shadowium": "Shadowium",
+  "material.pvgtcore.shadowium_photonium_rhodium_palladium": "Illuminated Rhodium Plated Palladium",
   "material.pvgtcore.spirit": "Spirit",
-  "material.pvgtcore.terrasteel": "Terrasteel"
+  "material.pvgtcore.terrasteel": "Terrasteel",
+  "material.pvgtcore.terrasteel_aluminium": "Aluminized Terrasteel"
 }
