@@ -150,6 +150,7 @@ dependencies {
     modImplementation "curse.maven:event-wrapper-1256971:7182179"
 
     //PV Core
+    modImplementation("curse.maven:proxima-vis-core-1594782:8354291")
     /*
     modImplementation('com.github.Proxima-Vis:ProximaVisCore:main-SNAPSHOT') {transitive = false}
     modImplementation("curse.maven:alexs-caves-924854:5848216")

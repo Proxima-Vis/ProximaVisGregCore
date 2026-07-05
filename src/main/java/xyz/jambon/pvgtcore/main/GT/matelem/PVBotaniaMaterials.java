@@ -84,7 +84,7 @@ public class PVBotaniaMaterials {
                 "gem", () -> ExtraBotanyItems.elementiumQuartz,
                 "block", () -> ExtraBotanyBlocks.elementiumQuartzBlock));
 
-        LIFE_ESSENCE = regmat("life_essence", "shiny", 0xedfbed, 0xa7eea8).gem()
+        LIFE_ESSENCE = regmat("life_essence", "shiny", 0xa7afe0, 0xe7d0dd).gem()
                 .langValue("Gaia Spirit")
                 .components(SPIRIT, 1)
                 .ignoredTagPrefixes(TagPrefix.gemChipped, TagPrefix.gemFlawed, TagPrefix.gemExquisite,

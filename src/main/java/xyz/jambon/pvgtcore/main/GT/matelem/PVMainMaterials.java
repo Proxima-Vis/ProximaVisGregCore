@@ -1,8 +1,13 @@
 package xyz.jambon.pvgtcore.main.GT.matelem;
 
+import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluids.FluidState;
+import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
+
+import net.minecraft.world.level.material.Fluid;
 
 import xyz.jambon.pvgtcore.helpers.PVFlagHelper;
 
@@ -11,6 +16,10 @@ import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
 import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
 
 public class PVMainMaterials {
+
+    public static void SetIgnoredFluid(Material material, Fluid fluid) {
+        material.getProperty(PropertyKey.FLUID).getStorage().store(FluidStorageKeys.LIQUID, () -> fluid, null);
+    }
 
     public static void register() {
         // NOOM
@@ -47,9 +56,11 @@ public class PVMainMaterials {
                         TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.gemChipped)
                 .buildAndRegister();
         GLUGG_BRINE = regmat("glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
-                .liquid(new FluidBuilder().block().temperature(294))
+                .liquid(new FluidBuilder().temperature(294))
                 .components(GURGLIUM, 1, Water, 2)
                 .buildAndRegister();
+
+        // SetIgnoredFluid(GLUGG_BRINE, Fluids.LAVA);
         CONCENTRATED_GLUGG_BRINE = regmat("concentrated_glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
                 .liquid(new FluidBuilder().temperature(372))
                 .components(GURGLIUM, 2, Water, 1)
@@ -69,6 +80,10 @@ public class PVMainMaterials {
         PRIMORDIAL_ASHES = regmat("primordial_ashes", "sand", 0x943b00, 0x000000).dust()
                 .components(PRIMORDIUM, 1)
                 .flags(PVFlagHelper.getAll("block", "nodecomp"))
+                .buildAndRegister();
+        PRIMORDIAL_LAVA = regmat("primordial_lava", "shiny", 0x943b00, 0xcd641e)
+                .liquid(new FluidBuilder().temperature(1700).state(FluidState.LIQUID))
+                .components(PRIMORDIUM, 2, Water, 1)
                 .buildAndRegister();
 
         // ENGER
