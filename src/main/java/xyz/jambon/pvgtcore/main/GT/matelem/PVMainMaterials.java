@@ -9,7 +9,9 @@ import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 
 import net.minecraft.world.level.material.Fluid;
 
+import net.tycothepug.pvcore.server.block.fluid.PVFluidRegistry;
 import xyz.jambon.pvgtcore.helpers.PVFlagHelper;
+import xyz.jambon.pvgtcore.helpers.PVFluidHooks;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
@@ -56,11 +58,11 @@ public class PVMainMaterials {
                         TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.gemChipped)
                 .buildAndRegister();
         GLUGG_BRINE = regmat("glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
-                .liquid(new FluidBuilder().temperature(294))
+                .liquid(PVFluidHooks.withExternalFluid(
+                        new FluidBuilder().temperature(294),
+                        () -> PVFluidRegistry.BRINE_FLUID_SOURCE))
                 .components(GURGLIUM, 1, Water, 2)
                 .buildAndRegister();
-
-        // SetIgnoredFluid(GLUGG_BRINE, Fluids.LAVA);
         CONCENTRATED_GLUGG_BRINE = regmat("concentrated_glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
                 .liquid(new FluidBuilder().temperature(372))
                 .components(GURGLIUM, 2, Water, 1)
