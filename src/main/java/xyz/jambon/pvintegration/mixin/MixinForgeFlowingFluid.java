@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore.mixin;
+package xyz.jambon.pvintegration.mixin;
 
 import com.gregtechceu.gtceu.api.fluids.attribute.FluidAttribute;
 import com.gregtechceu.gtceu.api.fluids.attribute.IAttributedFluid;
@@ -24,7 +24,7 @@ public abstract class MixinForgeFlowingFluid implements IAttributedFluid {
     }
 
     @Override
-    public Collection<FluidAttribute> getAttributes() {
+    public @NotNull Collection<FluidAttribute> getAttributes() {
         return pvcore_gt_attributes;
     }
 }

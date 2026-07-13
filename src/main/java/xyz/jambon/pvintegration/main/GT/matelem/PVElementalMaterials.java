@@ -1,10 +1,10 @@
-package xyz.jambon.pvgtcore.main.GT.matelem;
+package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 
-import xyz.jambon.pvgtcore.PVGTCore;
+import xyz.jambon.pvintegration.PVIntegration;
 
-import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
+import static xyz.jambon.pvintegration.main.GT.matelem.PVMaterials.*;
 
 public class PVElementalMaterials {
 
@@ -21,7 +21,7 @@ public class PVElementalMaterials {
     }
 
     public static Material elemmat(String element, int color) {
-        return new Material.Builder(PVGTCore.id(element))
+        return new Material.Builder(PVIntegration.id(element))
                 .color(color).element(PVElements.get(element)).dust().buildAndRegister();
     }
 }

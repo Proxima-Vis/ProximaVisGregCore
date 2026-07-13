@@ -1,27 +1,19 @@
-package xyz.jambon.pvgtcore.main.GT.matelem;
+package xyz.jambon.pvintegration.main.GT.matelem;
 
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
-import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluids.FluidState;
-import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
-
-import net.minecraft.world.level.material.Fluid;
 
 import net.tycothepug.pvcore.server.block.fluid.PVFluidRegistry;
-import xyz.jambon.pvgtcore.helpers.PVFlagHelper;
-import xyz.jambon.pvgtcore.helpers.PVFluidHooks;
 
+import xyz.jambon.pvintegration.helpers.PVFlagHelper;
+
+import static com.gregtechceu.gtceu.common.data.GTFluids.handleNonMaterialFluids;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
-import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
-import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
+import static xyz.jambon.pvintegration.helpers.PVMaterialHelper.regmat;
+import static xyz.jambon.pvintegration.main.GT.matelem.PVMaterials.*;
 
 public class PVMainMaterials {
-
-    public static void SetIgnoredFluid(Material material, Fluid fluid) {
-        material.getProperty(PropertyKey.FLUID).getStorage().store(FluidStorageKeys.LIQUID, () -> fluid, null);
-    }
 
     public static void register() {
         // NOOM
@@ -58,11 +50,11 @@ public class PVMainMaterials {
                         TagPrefix.gemExquisite, TagPrefix.gemFlawless, TagPrefix.gemFlawed, TagPrefix.gemChipped)
                 .buildAndRegister();
         GLUGG_BRINE = regmat("glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
-                .liquid(PVFluidHooks.withExternalFluid(
-                        new FluidBuilder().temperature(294),
-                        () -> PVFluidRegistry.BRINE_FLUID_SOURCE))
+                .liquid(new FluidBuilder().temperature(294))
                 .components(GURGLIUM, 1, Water, 2)
                 .buildAndRegister();
+        handleNonMaterialFluids(GLUGG_BRINE, PVFluidRegistry.BRINE_FLUID_SOURCE::get);
+
         CONCENTRATED_GLUGG_BRINE = regmat("concentrated_glugg_brine", "shiny", 0x1dbc5f, 0x5cffff)
                 .liquid(new FluidBuilder().temperature(372))
                 .components(GURGLIUM, 2, Water, 1)

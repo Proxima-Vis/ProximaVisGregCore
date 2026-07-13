@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "xyz.jambon.pvgtcore.mixin",
+  "package": "xyz.jambon.pvintegration.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "mixins": [
     "MixinForgeFlowingFluid",
     "MixinGTFluidBuilder",
-    "FluidBuilderAccessor"
+    "AccessorFluidBuilder"
   ],
   "client": [
   ],

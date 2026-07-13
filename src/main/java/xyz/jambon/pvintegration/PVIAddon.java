@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore;
+package xyz.jambon.pvintegration;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -6,17 +6,17 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
-import xyz.jambon.pvgtcore.main.GT.matelem.PVElements;
+import xyz.jambon.pvintegration.main.GT.matelem.PVElements;
 
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
 @GTAddon
-public class PVGTCoreAddon implements IGTAddon {
+public class PVIAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return PVGTCore.PVGTCORE_REGISTRATE;
+        return PVIntegration.PVINTEGRATION_REGISTRATE;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class PVGTCoreAddon implements IGTAddon {
 
     @Override
     public String addonModId() {
-        return PVGTCore.MOD_ID;
+        return PVIntegration.MOD_ID;
     }
 
     @Override

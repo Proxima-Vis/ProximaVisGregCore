@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore.helpers;
+package xyz.jambon.pvintegration.helpers;
 
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 

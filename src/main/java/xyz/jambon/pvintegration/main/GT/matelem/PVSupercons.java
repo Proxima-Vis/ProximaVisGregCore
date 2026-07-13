@@ -1,13 +1,13 @@
-package xyz.jambon.pvgtcore.main.GT.matelem;
+package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 
-import xyz.jambon.pvgtcore.helpers.PVFlagHelper;
+import xyz.jambon.pvintegration.helpers.PVFlagHelper;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
-import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
-import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
+import static xyz.jambon.pvintegration.helpers.PVMaterialHelper.regmat;
+import static xyz.jambon.pvintegration.main.GT.matelem.PVMaterials.*;
 
 public class PVSupercons {
 

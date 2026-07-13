@@ -1,11 +1,13 @@
-package xyz.jambon.pvgtcore.helpers;
+package xyz.jambon.pvintegration.helpers;
 
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
+
 import net.minecraft.world.level.material.Fluid;
 
 import java.util.function.Supplier;
 
 public final class PVFluidHooks {
+
     private PVFluidHooks() {}
 
     public static FluidBuilder withExternalFluid(FluidBuilder builder,
@@ -20,4 +22,3 @@ public final class PVFluidHooks {
         return builder;
     }
 }
-

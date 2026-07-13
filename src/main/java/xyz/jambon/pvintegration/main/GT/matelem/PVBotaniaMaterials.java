@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore.main.GT.matelem;
+package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 
@@ -6,13 +6,13 @@ import io.github.lounode.extrabotany.common.block.ExtraBotanyBlocks;
 import io.github.lounode.extrabotany.common.item.ExtraBotanyItems;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
-import xyz.jambon.pvgtcore.helpers.PVIgnore;
+import xyz.jambon.pvintegration.helpers.PVIgnore;
 
 import java.util.Map;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
-import static xyz.jambon.pvgtcore.helpers.PVMaterialHelper.regmat;
-import static xyz.jambon.pvgtcore.main.GT.matelem.PVMaterials.*;
+import static xyz.jambon.pvintegration.helpers.PVMaterialHelper.regmat;
+import static xyz.jambon.pvintegration.main.GT.matelem.PVMaterials.*;
 
 public class PVBotaniaMaterials {
 

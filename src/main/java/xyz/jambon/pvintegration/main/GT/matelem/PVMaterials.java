@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore.main.GT.matelem;
+package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 

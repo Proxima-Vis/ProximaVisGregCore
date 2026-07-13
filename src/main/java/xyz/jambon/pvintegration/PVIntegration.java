@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore;
+package xyz.jambon.pvintegration;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -21,17 +21,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import xyz.jambon.pvgtcore.main.GT.matelem.*;
+import xyz.jambon.pvintegration.main.GT.matelem.*;
 
-@Mod(PVGTCore.MOD_ID)
+@Mod(PVIntegration.MOD_ID)
 @SuppressWarnings("removal")
-public class PVGTCore {
+public class PVIntegration {
 
-    public static final String MOD_ID = "pvgtcore";
+    public static final String MOD_ID = "pvintegration";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate PVGTCORE_REGISTRATE = GTRegistrate.create(PVGTCore.MOD_ID);
+    public static GTRegistrate PVINTEGRATION_REGISTRATE = GTRegistrate.create(PVIntegration.MOD_ID);
 
-    public PVGTCore() {
+    public PVIntegration() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -49,7 +49,7 @@ public class PVGTCore {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
-        PVGTCORE_REGISTRATE.registerRegistrate();
+        PVINTEGRATION_REGISTRATE.registerRegistrate();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -68,11 +68,11 @@ public class PVGTCore {
     }
 
     public static void init() {
-        PVGTCORE_REGISTRATE.registerRegistrate();
+        PVINTEGRATION_REGISTRATE.registerRegistrate();
     }
 
     private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(PVGTCore.MOD_ID);
+        GTCEuAPI.materialManager.createRegistry(PVIntegration.MOD_ID);
     }
 
     private void addMaterials(MaterialEvent event) {

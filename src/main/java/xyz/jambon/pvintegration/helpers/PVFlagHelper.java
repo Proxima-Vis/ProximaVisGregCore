@@ -1,9 +1,9 @@
-package xyz.jambon.pvgtcore.helpers;
+package xyz.jambon.pvintegration.helpers;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlag;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 
-import xyz.jambon.pvgtcore.main.GT.matelem.PVMaterialFlags;
+import xyz.jambon.pvintegration.main.GT.matelem.PVMaterialFlags;
 
 import java.lang.reflect.Field;
 import java.util.*;

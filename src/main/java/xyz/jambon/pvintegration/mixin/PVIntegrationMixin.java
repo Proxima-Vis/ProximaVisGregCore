@@ -1,4 +1,4 @@
-package xyz.jambon.pvgtcore.mixin;
+package xyz.jambon.pvintegration.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 
@@ -11,4 +11,4 @@ import org.spongepowered.asm.mixin.Mixin;
 // to get your code to work before resorting to mixins,
 // as they can be highly invasive.
 @Mixin(value = WorldgenRandom.class, remap = false)
-public class PVGTCoreMixin {}
+public class PVIntegrationMixin {}
