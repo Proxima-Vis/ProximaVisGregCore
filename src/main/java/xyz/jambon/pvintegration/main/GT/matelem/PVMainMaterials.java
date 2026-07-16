@@ -79,10 +79,12 @@ public class PVMainMaterials {
                 .liquid(new FluidBuilder().temperature(1700).state(FluidState.LIQUID))
                 .components(PRIMORDIUM, 2, Water, 1)
                 .buildAndRegister();
+        handleNonMaterialFluids(PRIMORDIAL_LAVA, PVFluidRegistry.PRIMORDIAL_LAVA_FLUID_SOURCE::get);
 
         // ENGER
         ENERGIUM_MAT = regmat("energium_mat", "certus", 0xb24cd8, 0x7f3fb2).gem()
                 .components(ENERGIUM, 6)
+                .langValue("Energium")
                 .liquid(new FluidBuilder().temperature(300).state(FluidState.LIQUID))
                 .gas(new FluidBuilder().temperature(762).state(FluidState.GAS))
                 .plasma(new FluidBuilder().temperature(8621).state(FluidState.PLASMA))

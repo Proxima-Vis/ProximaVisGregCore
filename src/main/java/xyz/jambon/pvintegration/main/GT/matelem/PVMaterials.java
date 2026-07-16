@@ -33,6 +33,9 @@ public class PVMaterials {
     public static Material INFECTED_ENERGIUM;
     public static Material INFECTED_DELETED_ENERGIUM;
     public static Material DEPLETED_ENERGIUM;
+    public static Material ENERGIUM_ICE;
+
+    public static Material POSTGAME_GOO;
 
     public static Material MANASTEEL;
     public static Material MANA_DIAMOND;

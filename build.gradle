@@ -150,7 +150,7 @@ dependencies {
     modImplementation "curse.maven:event-wrapper-1256971:7182179"
 
     //PV Core
-    modImplementation("curse.maven:proxima-vis-core-1594782:8354291")
+    modImplementation("curse.maven:proxima-vis-core-1594782:8441063")
 }
 
 mixin {

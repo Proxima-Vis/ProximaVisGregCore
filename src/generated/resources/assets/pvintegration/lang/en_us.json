@@ -1,4 +1,5 @@
 {
+  "itemGroup.pvintegration.creative_tab": "Proxima Vis Integration",
   "material.pvintegration.aerialite": "Aerialite",
   "material.pvintegration.aerialite_tungstensteel": "Tungstensteel Coated Aerialite",
   "material.pvintegration.alfmana": "Alfmana",
@@ -12,7 +13,7 @@
   "material.pvintegration.elementium_quartz": "Elementium Quartz",
   "material.pvintegration.elementium_stainless_steel": "Stainless Alf-Doped Steel",
   "material.pvintegration.energium": "Energium",
-  "material.pvintegration.energium_mat": "Energium Mat",
+  "material.pvintegration.energium_mat": "Energium",
   "material.pvintegration.engeriophage": "Engeriophage",
   "material.pvintegration.gaiasteel": "Gaiasteel",
   "material.pvintegration.gaiasteel_titanium": "Gaia-infused Titanium",
