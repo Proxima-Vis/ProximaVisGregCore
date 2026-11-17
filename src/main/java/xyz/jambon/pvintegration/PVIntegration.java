@@ -2,8 +2,8 @@ package xyz.jambon.pvintegration;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
+import com.gregtechceu.gtceu.api.data.chemical.Element;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
-import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -15,7 +15,6 @@ import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -41,7 +40,7 @@ public class PVIntegration {
             .defaultCreativeTab(PVIntegration.MOD_ID, builder -> builder
                     .title(PVINTEGRATION_REGISTRATE.addLang(
                             "itemGroup", PVIntegration.id("creative_tab"),
-                            "Proxima Vis Integration"))
+                            "Proxima Vis: Integration"))
                     .icon(() -> ChemicalHelper.get(TagPrefix.gem, PVMaterials.ENERGIUM_MAT))
                     .displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(
                             PVIntegration.MOD_ID, PVINTEGRATION_REGISTRATE))
@@ -55,10 +54,10 @@ public class PVIntegration {
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::addCreative);
 
-        modEventBus.addListener(this::addMaterialRegistries);
         modEventBus.addListener(this::addMaterials);
         modEventBus.addListener(this::modifyMaterials);
 
+        modEventBus.addGenericListener(Element.class, this::registerElements);
         modEventBus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
         modEventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
         modEventBus.addGenericListener(SoundEntry.class, this::registerSounds);
@@ -67,13 +66,11 @@ public class PVIntegration {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
-        PVINTEGRATION_REGISTRATE.registerRegistrate();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
-            LOGGER.info("Look, I found a {}!", Items.DIAMOND);
+            LOGGER.info("PV:I found a {}!", ChemicalHelper.get(TagPrefix.gem, PVMaterials.ENERGIUM_MAT));
         });
     }
 
@@ -85,21 +82,17 @@ public class PVIntegration {
         LOGGER.info("Hey, we're on Minecraft version {}!", Minecraft.getInstance().getLaunchedVersion());
     }
 
-    public static void init() {
-        PVINTEGRATION_REGISTRATE.registerRegistrate();
-    }
-
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
-
-    private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(PVIntegration.MOD_ID);
-    }
 
     private void addMaterials(MaterialEvent event) {
         PVMaterials.init();
     }
 
     private void modifyMaterials(PostMaterialEvent event) {}
+
+    private void registerElements(GTCEuAPI.RegisterEvent<ResourceLocation, Element> event) {
+        PVElements.init();
+    }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         // CustomRecipeTypes.init();

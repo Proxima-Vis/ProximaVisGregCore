@@ -1,0 +1,35 @@
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        /* GTCEU */ url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+            includeGroup 'brachy.modularui'
+        }
+    }
+    maven { name 'FirstDarkDev'; url "https://maven.firstdark.dev/snapshots/" }
+    maven { /* Registrate */ url = "https://maven.tterrag.com/"
+        content { includeGroup("com.tterrag.registrate") }
+    }
+    exclusiveContent { // Configuration
+        forRepositories(
+                maven { url = "https://repo.repsy.io/mvn/toma/public/" },
+                maven { url = "https://api.repsy.io/mvn/toma/public" },
+        )
+        filter { includeGroup("dev.toma.configuration")}
+    }
+    maven {/* Patchouli, JEI */ name = "BlameJared"; url = "https://maven.blamejared.com/" }
+    maven { url = "https://maven.theillusivec4.top/" }
+    maven {/* Curse Forge File */ url "https://cursemaven.com/"
+        content { includeGroup "curse.maven" }
+    }
+    maven {/* EMI */ name = "TerraformersMC"; url = "https://maven.terraformersmc.com/" }
+    maven {/* EMI2 */ url = "https://repo.sleeping.town/"}
+    maven {/* Kotlin */ url = "https://thedarkcolour.github.io/KotlinForForge/" }
+    maven {/* Modmaven */ url = "https://modmaven.dev/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://api.modrinth.com/maven" }
+    maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+    maven {/* VS */ url = "https://maven.valkyrienskies.org"}
+}

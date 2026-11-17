@@ -4,9 +4,13 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 import com.gregtechceu.gtceu.api.fluids.FluidState;
 
+import net.tycothepug.pvcore.server.block.PVBlockRegistry;
 import net.tycothepug.pvcore.server.block.fluid.PVFluidRegistry;
 
 import xyz.jambon.pvintegration.helpers.PVFlagHelper;
+import xyz.jambon.pvintegration.helpers.PVIgnore;
+
+import java.util.Map;
 
 import static com.gregtechceu.gtceu.common.data.GTFluids.handleNonMaterialFluids;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
@@ -92,15 +96,27 @@ public class PVMainMaterials {
                 .buildAndRegister();
         INFECTED_ENERGIUM = regmat("infected_energium", "CERTUS", 0xb24cd8, 0x71d84c).gem()
                 .components(ENERGIUM, 5, ENGERIOPHAGE, 1)
-                .flags(PVFlagHelper.getAll("ext2Metal", "frame", "long_rod", "crystallizable", "lens"))
+                .flags(PVFlagHelper.getAll("ext2Metal", "long_rod", "crystallizable"))
                 .buildAndRegister();
-        INFECTED_DELETED_ENERGIUM = regmat("infected_depleted_energium", "CERTUS", 0x4c1560, 0x71d84c).gem()
+        INFECTED_DEPLETED_ENERGIUM = regmat("infected_depleted_energium", "CERTUS", 0x4c1560, 0x71d84c).gem()
                 .components(ENERGIUM, 4, ENGERIOPHAGE, 1)
-                .flags(PVFlagHelper.getAll("ext2Metal", "frame", "long_rod", "crystallizable", "lens"))
+                .flags(PVFlagHelper.getAll("ext2Metal", "long_rod", "crystallizable"))
                 .buildAndRegister();
         DEPLETED_ENERGIUM = regmat("depleted_energium", "CERTUS", 0x4c1560, 0x7f3fb2).gem()
                 .components(ENERGIUM, 5)
-                .flags(PVFlagHelper.getAll("ext2Metal", "frame", "long_rod", "crystallizable", "lens"))
+                .flags(PVFlagHelper.getAll("ext2Metal", "crystallizable"))
+                .buildAndRegister();
+        ENERGIUM_ICE = regmat("energium_ice", "SHINY", 0xeef6ff, 0xb24cd8).gem()
+                .components(Ice, 4, INFECTED_DEPLETED_ENERGIUM, 1)
+                .flags(PVFlagHelper.getAll("noSmashing", "noCraftHand", "noDecomp"))
+                .buildAndRegister();
+        PVIgnore.ignoreForms(ENERGIUM_ICE, Map.of(
+                "block", () -> PVBlockRegistry.ENERGIUM_ICE.get()));
+        ENGER_AIR = regmat("enger_air", "SHINY", 0xb24cd8, 0x7f3fb2)
+                .gas(246)
+                .components(LiquidEnderAir, 1, Methane, 12, CarbonMonoxide, 4, Ethylene, 2, HydrogenCyanide, 1,
+                        INFECTED_DEPLETED_ENERGIUM, 1)
+                .flags(PVFlagHelper.getAll("noSmashing", "noCraftHand", "noDecomp", "centrifuge"))
                 .buildAndRegister();
     }
 }

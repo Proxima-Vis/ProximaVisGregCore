@@ -2,17 +2,21 @@ package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 
+import xyz.jambon.pvintegration.PVIntegration;
+
+import static xyz.jambon.pvintegration.PVIntegration.PVINTEGRATION_REGISTRATE;
+
 public class PVMaterials {
+
+    static {
+        PVINTEGRATION_REGISTRATE.creativeModeTab(() -> PVIntegration.PVI_TAB);
+    }
 
     public static Material ANULIUM;
     public static Material GURGLIUM;
     public static Material PRIMORDIUM;
     public static Material ENERGIUM;
     public static Material ENGERIOPHAGE;
-
-    public static Material MANA;
-    public static Material ALFMANA;
-    public static Material SPIRIT;
 
     public static Material NOOM_GOO;
     public static Material LIGHT_NOOM;
@@ -31,32 +35,15 @@ public class PVMaterials {
 
     public static Material ENERGIUM_MAT;
     public static Material INFECTED_ENERGIUM;
-    public static Material INFECTED_DELETED_ENERGIUM;
+    public static Material INFECTED_DEPLETED_ENERGIUM;
     public static Material DEPLETED_ENERGIUM;
     public static Material ENERGIUM_ICE;
+    public static Material ENGER_AIR;
 
     public static Material POSTGAME_GOO;
-
-    public static Material MANASTEEL;
-    public static Material MANA_DIAMOND;
-    public static Material MANA_PEARL;
-    public static Material MANA_QUARTZ;
-    public static Material TERRASTEEL;
-    public static Material ELEMENTIUM;
-    public static Material DRAGONSTONE;
-    public static Material PIXIE_DUST;
-    public static Material ELEMENTIUM_QUARTZ;
-    public static Material LIFE_ESSENCE;
-    public static Material GAIASTEEL;
-    public static Material AERIALITE;
-    public static Material PHOTONIUM;
-    public static Material SHADOWIUM;
-    public static Material ORICHALCOS;;
 
     public static void init() {
         PVElementalMaterials.register();
         PVMainMaterials.register();
-        PVBotaniaMaterials.register();
-        PVSupercons.register();
     }
 }

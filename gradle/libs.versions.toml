@@ -1,0 +1,39 @@
+[versions]
+    minecraft = "1.20.1"
+    forge = "47.4.16"
+    parchment = "2023.09.03"
+
+    spotless = '7.0.2'
+    lombok = "1.18.24"
+
+    annotations = "26.0.1"
+    mixins-processor = "0.8.5"
+
+    gtceu = "8.0.0-SNAPSHOT"
+    mui = "3.3.1-SNAPSHOT"
+    ldlib = "1.0.50"
+    registrate = "MC1.20-1.3.11"
+    configuration = "3.1.0-forge"
+    emi = "1.1.24+1.20.1"
+    jade = "5390389"
+    ae2 = "15.4.10"
+    guideme = "20.1.15"
+    pvcore = "8474213"
+
+[libraries]
+    annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+    mixins-processor = { module = "org.spongepowered:mixin", version.ref = "mixins-processor" }
+    lombok = {module = "org.projectlombok:lombok", version.ref = "lombok"}
+
+    gtceu  = {module = "com.gregtechceu.gtceu:gtceu-1.20.1", version.ref = "gtceu"}
+    mui = {module = "brachy.modularui:modularui-mc1.20.1", version.ref = "mui"}
+    ldlib = {module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib"}
+    registrate = {module = "com.tterrag.registrate:Registrate", version.ref = "registrate"}
+    configuration = { module = "dev.toma.configuration:configuration-1.20.1", version.ref = "configuration" }
+
+    emi = {module = "dev.emi:emi-forge", version.ref = "emi"}
+    jade = {module = "curse.maven:jade-324717", version.ref = "jade"}
+
+    ae2 = {module = "appeng:appliedenergistics2-forge", version.ref =  "ae2"}
+    guideme = {module = "org.appliedenergistics:guideme", version.ref =  "guideme"}
+    pvcore = {module = "curse.maven:proxima-vis-core-1594782", version.ref =  "pvcore"}

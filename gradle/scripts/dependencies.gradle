@@ -1,0 +1,27 @@
+dependencies {
+    compileOnly(libs.annotations)
+    annotationProcessor(libs.mixins.processor) {artifact {classifier = "processor"}}
+
+    // JEI, EMI, Jade
+    modCompileOnly(libs.emi) {artifact {classifier = "api"}}
+    modRuntimeOnly(libs.emi)
+    modRuntimeOnly(libs.jade)
+
+    // GregTech and dependencies
+    modImplementation(libs.gtceu) { transitive = false; artifact {classifier = "slim"}}
+    modImplementation(libs.mui)
+    modImplementation(libs.ldlib)
+    modImplementation(libs.registrate)
+    modImplementation(libs.configuration)
+
+    // lombok
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+
+    // AE2
+    modImplementation(libs.ae2)
+    modImplementation(libs.guideme)
+
+    //PV Core
+    modImplementation(libs.pvcore)
+}

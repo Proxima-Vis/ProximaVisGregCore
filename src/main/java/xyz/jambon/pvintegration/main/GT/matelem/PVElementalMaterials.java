@@ -14,14 +14,10 @@ public class PVElementalMaterials {
         PRIMORDIUM = elemmat("primordium", 0xf03f13);
         ENERGIUM = elemmat("energium", 0xb24cd8);
         ENGERIOPHAGE = elemmat("engeriophage", 0x71d84c);
-
-        MANA = elemmat("mana", 0xb3dbf5);
-        ALFMANA = elemmat("alfmana", 0x02f400);
-        SPIRIT = elemmat("spirit", 0xffe8e8);
     }
 
     public static Material elemmat(String element, int color) {
         return new Material.Builder(PVIntegration.id(element))
-                .color(color).element(PVElements.get(element)).dust().buildAndRegister();
+                .color(color).element(PVElements.get(element)).buildAndRegister();
     }
 }
