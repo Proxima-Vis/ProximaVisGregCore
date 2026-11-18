@@ -1,7 +1,9 @@
 package xyz.jambon.pvintegration.main.GT.matelem;
 
 import com.gregtechceu.gtceu.api.data.chemical.Element;
-import com.gregtechceu.gtceu.common.data.GTElements;
+import com.gregtechceu.gtceu.api.registry.GTRegistries;
+
+import xyz.jambon.pvintegration.PVIntegration;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -42,6 +44,8 @@ public class PVElements {
 
     private static Element create(String id, String symbol, long protons, long neutrons,
                                   long halfLife, String decayTo, boolean isIsotope) {
-        return GTElements.createAndRegister(protons, neutrons, halfLife, decayTo, id, symbol, isIsotope);
+        Element element = new Element(protons, neutrons, halfLife, decayTo, id, symbol, isIsotope);
+        GTRegistries.ELEMENTS.register(PVIntegration.id(id), element);
+        return element;
     }
 }

@@ -6,8 +6,6 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
-import xyz.jambon.pvintegration.main.GT.matelem.PVElements;
-
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
@@ -28,19 +26,8 @@ public class PVIAddon implements IGTAddon {
     }
 
     @Override
-    public void registerTagPrefixes() {
-        // CustomTagPrefixes.init();
-    }
-
-    @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         // CustomRecipes.init(provider);
-    }
-
-    @Override
-    public void registerElements() {
-        IGTAddon.super.registerElements();
-        PVElements.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.
